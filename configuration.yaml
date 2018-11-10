@@ -39,6 +39,10 @@ updater:
 # Discover some devices automatically
 discovery:
 
+zigbee:
+  device: /dev/ttyUSB0
+  baud: 115200
+
 # Allows you to issue voice commands from the frontend in enabled browsers
 conversation:
 
