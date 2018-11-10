@@ -1,0 +1,19 @@
+keuken:
+        name: Keuken
+        entities:
+        - switch.keuken_lamp
+        - switch.eetkamer_lamp
+buiten:
+        name: Buiten
+        entities:
+        - switch.achterdeurbuiten_lamp
+        - switch.garagebuiten_lamp
+        - switch.voordeurbuiten_lamp
+
+
+gelijkvloers_view:
+        name: Gelijkvloers
+        view: yes
+        entities:
+        - group.keuken
+        - group.buiten

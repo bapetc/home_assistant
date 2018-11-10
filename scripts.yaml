@@ -1,0 +1,8 @@
+pulse:
+  sequence:
+  - service: switch.turn_on
+    data_template:
+      entity_id: "{{param}}"
+  - service: switch.turn_off
+    data_template:
+      entity_id: "{{param}}"

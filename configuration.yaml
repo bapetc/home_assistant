@@ -1,0 +1,196 @@
+homeassistant:
+  # Name of the location where Home Assistant is running
+  name: Home
+  # Location required to calculate the time the sun rises and sets
+  latitude: 50.9846713
+  longitude: 5.540785
+  # Impacts weather/sunrise data (altitude above sea level in meters)
+  elevation: 80
+  # metric for Metric, imperial for Imperial
+  unit_system: metric
+  # Pick yours from here: http://en.wikipedia.org/wiki/List_of_tz_database_time_zones
+  time_zone: Europe/Brussels
+  # Customization file
+  customize: !include customize.yaml
+
+# Show links to resources in log and frontend
+
+#introduction:
+
+# Enables the frontend
+frontend:
+
+# Enables configuration UI
+config:
+
+# Uncomment this if you are using SSL/TLS, running in Docker container, etc.
+# http:
+#   base_url: example.duckdns.org:8123
+
+# Checks for available updates
+# Note: This component will send some information about your system to
+# the developers to assist with development of Home Assistant.
+# For more information, please see:
+# https://home-assistant.io/blog/2016/10/25/explaining-the-updater/
+updater:
+# Optional, allows Home Assistant developers to focus on popular components.
+# include_used_components: true
+
+# Discover some devices automatically
+#discovery:
+
+# Allows you to issue voice commands from the frontend in enabled browsers
+conversation:
+
+media_player:
+- platform: soundtouch
+  host: 10.99.88.187
+  port: 8090
+  name: Soundtouch Keuken
+- platform: itunes
+  host: 10.99.88.183
+
+#modbus
+modbus:
+  type: tcp
+  host: 10.99.88.100
+  port: 502
+
+switch:
+- platform: modbus
+  slave: 1
+  coils:
+  - name: KeukenSwitch
+    slave: 1
+    coil: 12576
+  - name: EetkamerSwitch
+    slave: 1
+    coil: 12624
+  - name: AchterdeurbuitenSwitch
+    slave: 1
+    coil: 12672
+  - name: GaragebuitenSwitch
+    slave: 1
+    coil: 12752
+  - name: VoordeurbuitenSwitch
+    slave: 1
+    coil: 12992
+- platform: template
+  switches:
+    keuken_lamp:
+      friendly_name: Keuken
+      value_template: "{{ is_state('binary_sensor.keuken_lamp', 'on') }}"
+      turn_on:
+        service: script.pulse
+        data:
+          param: 'switch.KeukenSwitch'
+      turn_off:
+        service: script.pulse
+        data:
+          param: 'switch.KeukenSwitch'
+    eetkamer_lamp:
+      friendly_name: Eetkamer
+      value_template: "{{ is_state('binary_sensor.eetkamer_lamp', 'on') }}"
+      turn_on:
+        service: script.pulse
+        data:
+          param: 'switch.EetkamerSwitch'
+      turn_off:
+        service: script.pulse
+        data:
+          param: 'switch.EetkamerSwitch'
+    achterdeurbuiten_lamp:
+      friendly_name: Achterdeur buiten
+      value_template: "{{ is_state('binary_sensor.achterdeurbuiten_lamp', 'on') }}"
+      turn_on:
+        service: script.pulse
+        data:
+          param: 'switch.AchterdeurbuitenSwitch'
+      turn_off:
+        service: script.pulse
+        data:
+          param: 'switch.AchterdeurbuitenSwitch'
+    garagebuiten_lamp:
+      friendly_name: Garage buiten
+      value_template: "{{ is_state('binary_sensor.garagebuiten_lamp', 'on') }}"
+      turn_on:
+        service: script.pulse
+        data:
+          param: 'switch.GaragebuitenSwitch'
+      turn_off:
+        service: script.pulse
+        data:
+          param: 'switch.GaragebuitenSwitch'
+    voordeurbuiten_lamp:
+      friendly_name: Voordeur buiten
+      value_template: "{{ is_state('binary_sensor.voordeurbuiten_lamp', 'on') }}"
+      turn_on:
+        service: script.pulse
+        data:
+          param: 'switch.VoordeurbuitenSwitch'
+      turn_off:
+        service: script.pulse
+        data:
+          param: 'switch.VoordeurbuitenSwitch'
+binary_sensor:
+- platform: modbus
+  scan_interval: 2
+  coils:
+  - name: keuken_lamp
+    slave: 1
+    coil: 529
+  - name: eetkamer_lamp
+    slave: 1
+    coil: 532
+  - name: achterdeurbuiten_lamp
+    slave: 1
+    coil: 535
+  - name: garagebuiten_lamp
+    slave: 1
+    coil: 540
+  - name: voordeurbuiten_lamp
+    slave: 1
+    coil: 536
+
+
+#switch template
+
+
+http:
+  api_password: Jadelien1974
+
+# Enables support for tracking state changes over time
+history:
+
+# View all events in a logbook
+logbook:
+
+# Enables a map showing the location of tracked devices
+map:
+
+# Track the sun
+sun:
+
+# Weather prediction
+sensor:
+- platform: yr
+
+weather:
+- platform: buienradar
+
+# Text to speech
+tts:
+- platform: google
+
+# Cloud
+cloud:
+
+group: !include groups.yaml
+automation: !include automations.yaml
+script: !include scripts.yaml
+
+panel_iframe:
+  configurator:
+    title: Configurator
+    icon: mdi:wrench
+    url: http://hassio.local:3218

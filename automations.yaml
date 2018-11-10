@@ -1,0 +1,19 @@
+- id: buiten_id
+  alias: Buitenlichten aan
+  trigger:
+    platform: sun
+    event: sunset
+    offset: '+00:30:00'
+  action:
+  - service: switch.turn_on
+    entity_id:
+    - group.buiten
+- id: buiten_uit_id
+  alias: Buitenlichten uit
+  trigger:
+  - platform: time
+    at: '23:00'
+  action:
+  - service: switch.turn_off
+    entity_id:
+    - group.buiten

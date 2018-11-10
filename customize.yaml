@@ -1,0 +1,38 @@
+  switch.KeukenSwitch:
+    hidden: true
+  switch.EetkamerSwitch:
+    hidden: true
+  script.pulse:
+    hidden: true
+  switch.AchterdeurbuitenSwitch:
+    hidden: true
+  switch.VoordeurbuitenSwitch:
+    hidden: true
+  switch.GaragebuitenSwitch:
+    hidden: true
+  binary_sensor.keuken_lamp:
+    hidden: true
+  binary_sensor.eetkamer_lamp:
+    hidden: true
+  binary_sensor.achterdeurbuiten_lamp:
+    hidden: true
+  binary_sensor.garagebuiten_lamp:
+    hidden: true
+  binary_sensor.voordeurbuiten_lamp:
+    hidden: true
+  automation.buitenlichten_aan:
+    hidden: true
+  automation.buitenlichten_uit:
+    hidden: true
+  switch.voordeurbuiten_lamp:
+    icon: mdi:lightbulb-on
+  switch.keuken_lamp:
+    icon: mdi:lightbulb-on
+  switch.eetkamer_lamp:
+    icon: mdi:lightbulb-on
+  switch.achterdeurbuiten_lamp:
+    icon: mdi:lightbulb-on
+  switch.garagebuiten_lamp:
+    icon: mdi:lightbulb-on
+  switch.voordeur_lamp:
+    icon: mdi:lightbulb-on
