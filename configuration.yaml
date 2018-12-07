@@ -42,6 +42,15 @@ discovery:
 # Allows you to issue voice commands from the frontend in enabled browsers
 conversation:
 
+soundtouch:
+  name: Presets
+  initial: 1
+  min: 1
+  max: 6
+  step: 1
+  mode: slider
+  unit_of_measurement: step
+
 media_player:
 - platform: soundtouch
   host: 10.99.88.187
