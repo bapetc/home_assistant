@@ -55,6 +55,7 @@ modbus:
   type: tcp
   host: 10.99.88.100
   port: 502
+  scan_interval: 1
 
 switch:
 - platform: modbus
