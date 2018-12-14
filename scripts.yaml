@@ -1,24 +1,26 @@
 pulse_on:
   sequence:
-  - condition: state
-    entity_id: "{{uitgang}}"
-    state: off
-  - service: switch.turn_on
-    data_template:
-      entity_id: "{{param}}"
-  - service: switch.turn_off
-    data_template:
-      entity_id: "{{param}}"
+    condition:
+      - condition: state
+        entity_id: "{{uitgang}}"
+        state: off
+      - service: switch.turn_on
+        data_template:
+          entity_id: "{{param}}"
+      - service: switch.turn_off
+        data_template:
+          entity_id: "{{param}}"
 
 
 pulse_off:
   sequence:
-    - condition: state
-      entity_id: "{{uitgang}}"
-      state: on
-    - service: switch.turn_on
-      data_template:
-        entity_id: "{{param}}"
-    - service: switch.turn_off
-      data_template:
-        entity_id: "{{param}}"
+    condition:
+      - condition: state
+        entity_id: "{{uitgang}}"
+        state: on
+      - service: switch.turn_on
+        data_template:
+          entity_id: "{{param}}"
+      - service: switch.turn_off
+        data_template:
+          entity_id: "{{param}}"
