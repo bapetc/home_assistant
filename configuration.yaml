@@ -85,12 +85,12 @@ switch:
         service: script.pulse_on
         data:
           param: 'switch.KeukenSwitch'
-          uitgang: 'binary_sensor.keuken_lamp'
+          switch: 'binary_sensor.keuken_lamp'
       turn_off:
         service: script.pulse_off
         data:
           param: 'switch.KeukenSwitch'
-          uitgang: 'binary_sensor.keuken_lamp'
+          switch: 'binary_sensor.keuken_lamp'
     eetkamer_lamp:
       friendly_name: Eetkamer
       value_template: "{{ is_state('binary_sensor.eetkamer_lamp', 'on') }}"
@@ -98,12 +98,12 @@ switch:
         service: script.pulse_on
         data:
           param: 'switch.EetkamerSwitch'
-          uitgang: 'binary_sensor.eetkamer_lamp'
+          switch: 'binary_sensor.eetkamer_lamp'
       turn_off:
         service: script.pulse_off
         data:
           param: 'switch.EetkamerSwitch'
-          uitgang: 'binary_sensor.eetkamer_lamp'
+          switch: 'binary_sensor.eetkamer_lamp'
     achterdeurbuiten_lamp:
       friendly_name: Achterdeur buiten
       value_template: "{{ is_state('binary_sensor.achterdeurbuiten_lamp', 'on') }}"
@@ -111,12 +111,12 @@ switch:
         service: script.pulse_on
         data:
           param: 'switch.AchterdeurbuitenSwitch'
-          uitgang: 'binary_sensor.achterdeurbuiten_lamp'
+          switch: 'binary_sensor.achterdeurbuiten_lamp'
       turn_off:
         service: script.pulse_off
         data:
           param: 'switch.AchterdeurbuitenSwitch'
-          uitgang: 'binary_sensor.achterdeurbuiten_lamp'
+          switch: 'binary_sensor.achterdeurbuiten_lamp'
     garagebuiten_lamp:
       friendly_name: Garage buiten
       value_template: "{{ is_state('binary_sensor.garagebuiten_lamp', 'on') }}"
@@ -124,12 +124,12 @@ switch:
         service: script.pulse_on
         data:
           param: 'switch.GaragebuitenSwitch'
-          uitgang: 'binary_sensor.garagebuiten_lamp'
+          switch: 'binary_sensor.garagebuiten_lamp'
       turn_off:
         service: script.pulse_off
         data:
           param: 'switch.GaragebuitenSwitch'
-          uitgang: 'binary_sensor.garagebuiten_lamp'
+          switch: 'binary_sensor.garagebuiten_lamp'
     voordeurbuiten_lamp:
       friendly_name: Voordeur buiten
       value_template: "{{ is_state('binary_sensor.voordeurbuiten_lamp', 'on') }}"
@@ -137,12 +137,12 @@ switch:
         service: script.pulse_on
         data:
           param: 'switch.VoordeurbuitenSwitch'
-          uitgang: 'binary_sensor.voordeurbuiten_lamp'
+          switch: 'binary_sensor.voordeurbuiten_lamp'
       turn_off:
         service: script.pulse_off
         data:
           param: 'switch.VoordeurbuitenSwitch'
-          uitgang: 'binary_sensor.voordeurbuiten_lamp'
+          switch: 'binary_sensor.voordeurbuiten_lamp'
 
 light:
 - platform: template
@@ -154,12 +154,12 @@ light:
         service: script.pulse_on
         data:
           param: 'switch.KeukenSwitch'
-          uitgang: 'binary_sensor.keuken_lamp'
+          switch: 'binary_sensor.keuken_lamp'
       turn_off:
         service: script.pulse_off
         data:
           param: 'switch.KeukenSwitch'
-          uitgang: 'binary_sensor.keuken_lamp'
+          switch: 'binary_sensor.keuken_lamp'
 
 binary_sensor:
 - platform: modbus

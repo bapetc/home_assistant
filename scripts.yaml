@@ -1,9 +1,7 @@
 pulse_on:
   sequence:
-  - condition: state
-    data_template:
-     entity_id: "{{uitgang}}"
-    state: 'off'
+  - condition: template
+      value_template: "{{ is_state( {{ switch }} , 'off') }}"
   - service: switch.turn_on
     data_template:
       entity_id: "{{param}}"
@@ -14,10 +12,8 @@ pulse_on:
 
 pulse_off:
   sequence:
-  - condition: state
-    data_template:
-     entity_id: "{{uitgang}}"
-    state: 'on'
+  - condition: template
+      value_template: "{{ is_state( {{ switch }} , 'on') }}"
   - service: switch.turn_on
     data_template:
       entity_id: "{{param}}"
