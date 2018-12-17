@@ -1,7 +1,4 @@
 homeassistant:
-
-  logger:
-    default: info
   # Name of the location where Home Assistant is running
   name: Home
   # Location required to calculate the time the sun rises and sets
@@ -19,7 +16,8 @@ homeassistant:
 # Show links to resources in log and frontend
 
 #introduction:
-
+logger:
+  default: debug
 # Enables the frontend
 frontend:
 
