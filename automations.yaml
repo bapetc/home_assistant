@@ -30,7 +30,7 @@
       data:
         entity_id:
           - switch.terras_lamp_binnen
-          - switch.terras_lamp_binnen
+          - switch.terras_lamp_buiten
     - service: timer.start
       data:
         entity_id: timer.terras
@@ -47,4 +47,4 @@
       data:
         entity_id:
           - switch.terras_lamp_binnen
-          - switch.terras_lamp_binnen
+          - switch.terras_lamp_buiten
