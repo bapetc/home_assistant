@@ -24,6 +24,10 @@
     hidden: true
   automation.buitenlichten_uit:
     hidden: true
+  switch.TerrasBuitenSwitch:
+    hidden: true
+  switch.TerrasBinnenSwitch:
+    hidden: true
   switch.voordeurbuiten_lamp:
     icon: mdi:lightbulb-on
   switch.keuken_lamp:
@@ -35,4 +39,8 @@
   switch.garagebuiten_lamp:
     icon: mdi:lightbulb-on
   switch.voordeur_lamp:
+    icon: mdi:lightbulb-on
+  switch.terrasbinnen_lamp:
+    icon: mdi:lightbulb-on
+  switch.terrasbuiten_lamp:
     icon: mdi:lightbulb-on
