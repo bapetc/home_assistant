@@ -26,8 +26,7 @@
       from: 'off'
       to: 'on'
   action:
-    condition:
-      condition: or  # 'when dark' condition: either after sunset or before sunrise
+    - condition: or
       conditions:
         - condition: sun
           after: sunset
