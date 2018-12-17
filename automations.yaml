@@ -18,7 +18,8 @@
     entity_id:
     - group.buiten
 
-- alias: Terras licht
+- id: terras_id
+  alias: Terras licht
   trigger:
     - platform: state
       entity_id: binary_sensor.presence_3
@@ -32,7 +33,8 @@
       data:
         entity_id: timer.terras
 
-- alias: Turn off hallway lights 10 minutes after trigger
+- id: timer_id
+  alias: Turn off hallway lights 10 minutes after trigger
   trigger:
     platform: event
     event_type: timer.finished
