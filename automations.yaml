@@ -48,6 +48,6 @@
           - group.terras
 
 
-  timer:
-   terras:
-    duration: '00:1:00'
+timer:
+ terras:
+  duration: '00:1:00'
