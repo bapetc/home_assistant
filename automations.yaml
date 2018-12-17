@@ -26,6 +26,13 @@
       from: 'off'
       to: 'on'
   action:
+    - condition:
+        condition: or  # 'when dark' condition: either after sunset or before sunrise
+        conditions:
+          - condition: sun
+            after: sunset
+          - condition: sun
+            before: sunrise
     - service: switch.turn_on
       data:
         entity_id:
