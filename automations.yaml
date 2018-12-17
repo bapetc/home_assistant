@@ -18,3 +18,14 @@
     entity_id:
     - group.buiten
 
+- id: terras_id
+  alias: Terras licht
+  trigger:
+    - platform: state
+      entity_id: binary_sensor.presence_3
+      to: 'on'
+  action:
+    - service: switch.turn_on
+      data:
+        entity_id:
+          - group.terras
