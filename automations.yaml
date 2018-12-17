@@ -31,9 +31,20 @@
         entity_id:
           - switch.terras_lamp_binnen
           - switch.terras_lamp_buiten
-    - service: timer.start
+
+- id: terras_id_uit
+  alias: Terras uit
+  trigger:
+    - platform: state
+      entity_id: binary_sensor.presence_3
+      from: 'on'
+      to: 'off'
+  action:
+    - service: switch.turn_off
       data:
-        entity_id: timer.terras
+        entity_id:
+          - switch.terras_lamp_binnen
+          - switch.terras_lamp_buiten
 
 - id: timer_id
   alias: Turn off hallway lights 10 minutes after trigger
