@@ -29,7 +29,8 @@
     - service: switch.turn_on
       data:
         entity_id:
-          - group.terras
+          - switch.TerrasBinnenSwitch
+          - switch.TerrasBuitenSwitch
     - service: timer.start
       data:
         entity_id: timer.terras
@@ -45,4 +46,5 @@
     - service: switch.turn_off
       data:
         entity_id:
-          - group.terras
+          - switch.TerrasBinnenSwitch
+          - switch.TerrasBuitenSwitch

@@ -2,8 +2,10 @@
     hidden: true
   switch.EetkamerSwitch:
     hidden: true
-  script.pulse:
+  script.pulse_on:
     hidden: true
+  script.pulse_off:
+      hidden: true
   switch.AchterdeurbuitenSwitch:
     hidden: true
   switch.VoordeurbuitenSwitch:
