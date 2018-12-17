@@ -40,7 +40,7 @@
     icon: mdi:lightbulb-on
   switch.voordeur_lamp:
     icon: mdi:lightbulb-on
-  switch.terrasbinnen_lamp:
+  switch.terras_lamp_binnen:
     icon: mdi:lightbulb-on
-  switch.terrasbuiten_lamp:
+  switch.terras_lamp_buiten:
     icon: mdi:lightbulb-on
