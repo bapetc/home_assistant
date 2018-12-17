@@ -46,8 +46,3 @@
       data:
         entity_id:
           - group.terras
-
-
-timer:
- terras:
-  duration: '00:1:00'
