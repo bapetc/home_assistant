@@ -10,6 +10,11 @@ buiten:
         - switch.garagebuiten_lamp
         - switch.voordeurbuiten_lamp
 
+terras:
+  name: Terras
+  entities:
+    - switch.terras_lamp_buiten
+    - switch.terras_lamp_binnen
 
 gelijkvloers_view:
         name: Gelijkvloers

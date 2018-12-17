@@ -76,6 +76,12 @@ switch:
   - name: VoordeurbuitenSwitch
     slave: 1
     coil: 12992
+  - name: TerrasBinnenSwitch
+    slave: 1
+    coil: 12416
+  - name: TerrasBuitenSwitch
+    slave: 1
+    coil: 12720
 - platform: template
   switches:
     keuken_lamp:
@@ -143,23 +149,32 @@ switch:
         data:
           param: 'switch.VoordeurbuitenSwitch'
           sensor: 'binary_sensor.voordeurbuiten_lamp'
-
-light:
-- platform: template
-  lights:
-    keuken_lampl:
-      friendly_name: Keuken L
-      value_template: "{{ is_state('binary_sensor.keuken_lamp', 'on') }}"
+    terras_lamp_binnen:
+      friendly_name: Terras binnen
+      value_template: "{{ is_state('binary_sensor.terrasbinnen_lamp', 'on') }}"
       turn_on:
         service: script.pulse_on
         data:
-          param: 'switch.KeukenSwitch'
-          switch: 'binary_sensor.keuken_lamp'
+          param: 'switch.TerrasBinnenSwitch'
+          sensor: 'binary_sensor.terrasbinnen_lamp'
       turn_off:
         service: script.pulse_off
         data:
-          param: 'switch.KeukenSwitch'
-          switch: 'binary_sensor.keuken_lamp'
+          param: 'switch.TerrasBinnenSwitch'
+          sensor: 'binary_sensor.terrasbinnen_lamp'
+    terras_lamp_buiten:
+      friendly_name: Terras buiten
+      value_template: "{{ is_state('binary_sensor.terrasbuiten_lamp', 'on') }}"
+      turn_on:
+        service: script.pulse_on
+        data:
+          param: 'switch.TerrasBuitenSwitch'
+          sensor: 'binary_sensor.terrasbuiten_lamp'
+      turn_off:
+        service: script.pulse_off
+        data:
+          param: 'switch.TerrasBuitenSwitch'
+          sensor: 'binary_sensor.terrasbuiten_lamp'
 
 binary_sensor:
 - platform: modbus
@@ -180,7 +195,12 @@ binary_sensor:
   - name: voordeurbuiten_lamp
     slave: 1
     coil: 536
-
+  - name: terrasbinnen_lamp
+    slave: 1
+    coil: 534
+  - name: terrasbuiten_lamp
+    slave: 1
+    coil: 538
 
 #switch template
 
