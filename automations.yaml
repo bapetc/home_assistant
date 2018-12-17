@@ -41,9 +41,9 @@
      event_data:
       entity_id: timer.terras
   action:
-    service: switch.turn_off
-    data:
-      entity_id:
+    - service: switch.turn_off
+      data:
+       entity_id:
         - group.terras
 
 timer:
