@@ -47,7 +47,7 @@
         entity_id:
           - group.terras
 
-- id:
+
   timer:
    terras:
     duration: '00:1:00'
