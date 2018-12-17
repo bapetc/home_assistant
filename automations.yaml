@@ -25,11 +25,11 @@
       entity_id: binary_sensor.presence_3
       from: 'off'
       to: 'on'
+  condition:
+    - condition: state
+      entity_id: sun.sun
+      state: 'below_horizon'
   action:
-    condition:
-      - condition: state
-        entity_id: sun.sun
-        state: 'below_horizon'
     - service: switch.turn_on
       data:
         entity_id:
