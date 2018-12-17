@@ -78,7 +78,7 @@ switch:
     coil: 12992
   - name: TerrasBinnenSwitch
     slave: 1
-    coil: 12320
+    coil: 12496
   - name: TerrasBuitenSwitch
     slave: 1
     coil: 12704
@@ -200,7 +200,7 @@ binary_sensor:
     coil: 542
   - name: terrasbuiten_lamp
     slave: 1
-    coil: 532
+    coil: 537
 
 #switch template
 
