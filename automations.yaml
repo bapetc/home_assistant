@@ -23,9 +23,31 @@
   trigger:
     - platform: state
       entity_id: binary_sensor.presence_3
+      from: 'off'
       to: 'on'
   action:
     - service: switch.turn_on
       data:
         entity_id:
           - group.terras
+    - service: timer.start
+      data:
+        entity_id: timer.terras
+
+- id: timer_id
+  alias: Turn off hallway lights 10 minutes after trigger
+  trigger:
+    - platform: event
+      event_type: timer.finished
+      event_data:
+        entity_id: timer.terras
+  action:
+    - service: switch.turn_off
+      data:
+        entity_id:
+          - group.terras
+
+- id:
+  timer:
+   terras:
+    duration: '00:1:00'
