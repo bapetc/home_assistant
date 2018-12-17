@@ -75,9 +75,6 @@ switch:
   - name: VoordeurbuitenSwitch
     slave: 1
     coil: 12992
-  - name: TerrasBinnenSwitch
-    slave: 1
-    coil: 12704
   - name: TerrasBuitenSwitch
     slave: 1
     coil: 12704
@@ -194,9 +191,6 @@ binary_sensor:
   - name: voordeurbuiten_lamp
     slave: 1
     coil: 536
-  - name: terrasbinnen_lamp
-    slave: 1
-    coil: 542
   - name: terrasbuiten_lamp
     slave: 1
     coil: 537

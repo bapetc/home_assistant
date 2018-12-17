@@ -29,8 +29,7 @@
     - service: switch.turn_on
       data:
         entity_id:
-          - binary_sensor.terrasbuiten_lamp
-          - binary_sensor.terrasbinnen_lamp
+          - switch.terras_lamp_buiten
 
 - id: terras_id_uit
   alias: Terras uit
@@ -43,8 +42,7 @@
     - service: switch.turn_off
       data:
         entity_id:
-          - binary_sensor.terrasbuiten_lamp
-          - binary_sensor.terrasbinnen_lamp
+          - switch.terras_lamp_buiten
 
 - id: timer_id
   alias: Turn off hallway lights 10 minutes after trigger
@@ -57,5 +55,4 @@
     - service: switch.turn_off
       data:
         entity_id:
-          - binary_sensor.terrasbuiten_lamp
-          - binary_sensor.terrasbinnen_lamp
+          - switch.terras_lamp_buiten
