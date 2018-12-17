@@ -78,7 +78,7 @@ switch:
     coil: 12992
   - name: TerrasBinnenSwitch
     slave: 1
-    coil: 12816
+    coil: 12320
   - name: TerrasBuitenSwitch
     slave: 1
     coil: 12704
