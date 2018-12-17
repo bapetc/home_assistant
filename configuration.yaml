@@ -78,10 +78,10 @@ switch:
     coil: 12992
   - name: TerrasBinnenSwitch
     slave: 1
-    coil: 12528
+    coil: 12480
   - name: TerrasBuitenSwitch
     slave: 1
-    coil: 12512
+    coil: 12736
 - platform: template
   switches:
     keuken_lamp:
