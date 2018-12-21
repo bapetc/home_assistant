@@ -131,7 +131,7 @@ switch:
         service: script.pulse_off
         data:
           param: 'switch.GaragebuitenSwitch'
-          switch: 'binary_sensor.garagebuiten_lamp'
+          sensor: 'binary_sensor.garagebuiten_lamp'
     voordeurbuiten_lamp:
       friendly_name: Voordeur buiten
       value_template: "{{ is_state('binary_sensor.voordeurbuiten_lamp', 'on') }}"
